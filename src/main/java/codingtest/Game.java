@@ -12,6 +12,9 @@ public abstract class Game {
     players.add(player);
   };
 
+  public List<Player> getPlayers() {
+    return players;
+  }
 
   abstract void play();
 }

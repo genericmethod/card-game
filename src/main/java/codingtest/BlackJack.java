@@ -1,10 +1,10 @@
 package codingtest;
 
+import java.util.List;
+
+import codingtest.domain.Player;
 import codingtest.domain.deck.Deck;
 
-/**
- * @author cfarrugia
- */
 public class BlackJack extends Game {
 
   private Deck deck;
@@ -16,4 +16,10 @@ public class BlackJack extends Game {
   public void play() {
 
   }
+
+//  private isGameFinished(){
+//    final List<Player> players = getPlayers();
+//    for (Player player : players) {
+//    }
+//  }
 }
