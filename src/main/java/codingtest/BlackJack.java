@@ -14,12 +14,22 @@ public class BlackJack extends Game {
   }
 
   public void play() {
-
+    dealHand();
   }
 
-//  private isGameFinished(){
-//    final List<Player> players = getPlayers();
-//    for (Player player : players) {
-//    }
-//  }
+  public void dealHand() {
+    for (Player player : getPlayers()) {
+      //pop two cards for each player
+      player.addCard(deck.popCard());
+      player.addCard(deck.popCard());
+    }
+  }
+
+  private boolean isGameFinished(){
+    final List<Player> players = getPlayers();
+    for (Player player : players) {
+
+    }
+    return true;
+  }
 }

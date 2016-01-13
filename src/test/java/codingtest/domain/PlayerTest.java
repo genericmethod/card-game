@@ -1,7 +1,5 @@
 package codingtest.domain;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -27,6 +25,7 @@ public class PlayerTest {
     player.addCard(new Card(Rank.THREE, Suit.CLUBS));
     assertEquals(22, player.getCardTotal());
     assertEquals(Move.BUST, player.getNextMove());
+
 
   }
 }

@@ -5,9 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-  Move nextMove;
 
-  List<Card> cards = new ArrayList<Card>();
+  Move nextMove;
+  List<Card> cards;
+
+  public Player() {
+    cards = new ArrayList<Card>();
+  }
+
   public void addCard(Card card){
     cards.add(card);
   }
@@ -31,4 +36,9 @@ public class Player {
   public Move getNextMove() {
     return nextMove;
   }
+
+  public List<Card> getCards() {
+    return cards;
+  }
+
 }
