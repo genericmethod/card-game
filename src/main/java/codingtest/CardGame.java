@@ -1,5 +1,8 @@
 package codingtest;
 
+import java.util.List;
+
+import codingtest.domain.Card;
 import codingtest.domain.deck.Deck;
 
 /**
@@ -13,6 +16,9 @@ public class CardGame {
      * @param args the arguments to the game
      */
     public static void main(String[] args) {
+
+        List<Card> cards = Card.getNewPackOfCards();
+        Deck deck = new Deck();
 
     }
 }
