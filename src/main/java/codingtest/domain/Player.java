@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Player {
 
-  Move nextMove;
   List<Card> cards;
 
   public Player() {
@@ -22,19 +21,15 @@ public class Player {
     for (Card card : cards) {
       total = total + card.getRank().value;
     }
-    nextMove = calculateNextMove(total);
     return total;
   }
 
-  private Move calculateNextMove(int total) {
+  public Move getStatus() {
+    int total = getCardTotal();
     if (total < 17) return Move.HIT;
     if (total > 21) return Move.BUST;
     if (total >=17) return Move.STICK;
     return null;
-  }
-
-  public Move getNextMove() {
-    return nextMove;
   }
 
   public List<Card> getCards() {
