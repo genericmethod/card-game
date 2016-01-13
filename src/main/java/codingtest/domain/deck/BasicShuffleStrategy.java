@@ -14,7 +14,6 @@ public class BasicShuffleStrategy implements Shuffle {
     for (Card unshuffledCard : unshuffledCards) {
       shuffledCards.push(unshuffledCard);
     }
-
     return shuffledCards;
   }
 }
