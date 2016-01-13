@@ -20,8 +20,10 @@ public class BlackJack extends Game {
 
   public void play() {
     dealHand();
-    while (isGameNotFinished()){
-      //nextTurn();
+    while (isGameNotFinished()) {
+      for (Player player : getPlayers()) {
+        executeTurn(player);
+      }
     }
   }
 
@@ -31,14 +33,12 @@ public class BlackJack extends Game {
       player.addCard(deck.popCard());
       player.addCard(deck.popCard());
     }
+  }
 
-   while (isGameNotFinished()) {
-     for (Player player : getPlayers()) {
-        executeTurn(player);
-      }
+  public void executeTurn(Player player){
+    if (player.getStatus() == Move.HIT) {
+      player.addCard(deck.popCard());
     }
-
-    Player player = getWinner(getPlayers());
   }
 
   public Player getWinner(List<Player> players) {
@@ -85,13 +85,6 @@ public class BlackJack extends Game {
 
   private boolean isGameNotFinished(){
     return !isGameFinished();
-  }
-
-  public void executeTurn(Player player){
-    if (player.getStatus() == Move.HIT) {
-      player.addCard(deck.popCard());
-      return;
-    }
   }
 
   private boolean checkAllStick(List<Player> players){

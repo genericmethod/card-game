@@ -176,4 +176,28 @@ public class BlackJackTest {
     assertEquals(null, blackJack.getWinner(blackJack.getPlayers()));
   }
 
+  @Test
+  public void testExecuteTurn() {
+
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
+
+    List<Card> newPackOfCards = Card.getNewPackOfCards();
+    Deck deck = new Deck();
+    deck.shuffle(newPackOfCards);
+    BlackJack blackJack = new BlackJack(deck);
+
+    playerOne.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerOne.addCard(new Card(Rank.TWO, Suit.DIAMONDS));
+
+    playerTwo.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerTwo.addCard(new Card(Rank.EIGHT, Suit.DIAMONDS));
+
+    blackJack.executeTurn(playerOne);
+    blackJack.executeTurn(playerTwo);
+
+    assertEquals("Player one status should be hit. Another card should be dealt", 3, playerOne.getCards().size());
+    assertEquals("Player two status should be Stick. No card should be dealt", 2, playerTwo.getCards().size());
+  }
+
 }
