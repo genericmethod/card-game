@@ -1,16 +1,20 @@
 package codingtest.domain;
 
-
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Player {
 
-  List<Card> cards;
+  List<Card> cards =  new ArrayList<Card>();
+  String playerName;
 
   public Player() {
-    cards = new ArrayList<Card>();
+
+  }
+
+  public Player(String playerName) {
+    this.playerName = playerName;
+
   }
 
   public void addCard(Card card){
@@ -37,4 +41,11 @@ public class Player {
     return cards;
   }
 
+  public String getPlayerName() {
+    return playerName;
+  }
+
+  public String getInfo() {
+    return getPlayerName() + " Card Total : " + getCardTotal() + " Status " + getStatus().name();
+  }
 }

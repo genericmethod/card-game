@@ -21,8 +21,8 @@ public class CardGame  {
         Deck deck = new Deck();
         deck.shuffle(newPackOfCards);
         BlackJack blackJack = new BlackJack(deck);
-        blackJack.addPlayer(new Player());
-        blackJack.addPlayer(new Player());
+        blackJack.addPlayer(new Player("Player 1"));
+        blackJack.addPlayer(new Player("Player 2"));
         blackJack.play();
     }
 }

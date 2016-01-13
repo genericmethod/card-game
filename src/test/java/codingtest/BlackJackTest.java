@@ -200,4 +200,16 @@ public class BlackJackTest {
     assertEquals("Player two status should be Stick. No card should be dealt", 2, playerTwo.getCards().size());
   }
 
+  @Test
+  public void testPlay(){
+
+    List<Card> newPackOfCards = Card.getNewPackOfCards();
+    Deck deck = new Deck();
+    deck.shuffle(newPackOfCards);
+    BlackJack blackJack = new BlackJack(deck);
+    blackJack.addPlayer(new Player("Player 1"));
+    blackJack.addPlayer(new Player("Player 2"));
+    blackJack.play();
+  }
+
 }

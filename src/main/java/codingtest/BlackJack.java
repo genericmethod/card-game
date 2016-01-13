@@ -1,5 +1,9 @@
 package codingtest;
 
+
+
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,6 +16,8 @@ import codingtest.domain.deck.Deck;
 
 public class BlackJack extends Game {
 
+  private static final Logger log = Logger.getLogger(BlackJack.class);
+
   private Deck deck;
 
   public BlackJack(Deck deck) {
@@ -19,12 +25,16 @@ public class BlackJack extends Game {
   }
 
   public void play() {
+    log.info("*** Game Started");
     dealHand();
+
+    log.info("*** First hand dealt");
     while (isGameNotFinished()) {
       for (Player player : getPlayers()) {
         executeTurn(player);
       }
     }
+    log.info("*** Game Finished");
   }
 
   public void dealHand() {
@@ -36,9 +46,11 @@ public class BlackJack extends Game {
   }
 
   public void executeTurn(Player player){
+    log.info("**** Executing Turn ...");
     if (player.getStatus() == Move.HIT) {
       player.addCard(deck.popCard());
     }
+    log.info(player.getInfo());
   }
 
   public Player getWinner(List<Player> players) {
