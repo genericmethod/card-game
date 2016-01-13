@@ -55,3 +55,6 @@ Assume there are 3 players. The aim of the game is to collect cards so that the 
 6.	Add extra capability to the application so that the game rules can be altered so that the game being simulated (blackjack, poker, rummy) can be chosen at run-time from any game that is playable with a single deck of cards and 2 or more players.
 
 7.	Finally, give us (**thomsonreuters**) access to your fork of the coding test (using Administration >> Access Management) so that we can review your solutions.
+
+
+"Hello World!" - Chris Farrugia 2016
