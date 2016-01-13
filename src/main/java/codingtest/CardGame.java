@@ -1,5 +1,7 @@
 package codingtest;
 
+import codingtest.domain.deck.Deck;
+
 /**
  * Class that handles the playing of a card game from a simple command line interface,
  * and echoes back a step-by-step description of the game to the console.

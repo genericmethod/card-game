@@ -1,4 +1,4 @@
-package codingtest.codingtest.domain;
+package codingtest.domain;
 
 
 public enum Rank {

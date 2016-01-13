@@ -1,8 +1,5 @@
 package codingtest.domain;
 
-import codingtest.codingtest.domain.Rank;
-import codingtest.codingtest.domain.Suit;
-
 /**
  * This is the domain class that represents a card in a card game.
  */
