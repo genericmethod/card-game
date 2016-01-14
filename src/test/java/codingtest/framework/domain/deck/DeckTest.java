@@ -14,6 +14,6 @@ public class DeckTest {
   @Test
   public void testDeckShuffle() {
     Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
-    assertEquals("Deck must still have 52 cards when shuffled", 52, deck.getUnshuffledCards().size());
+    assertEquals("Deck must still have 52 cards when shuffled", 52, deck.getUnShuffledCards().size());
   }
 }

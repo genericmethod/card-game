@@ -26,8 +26,8 @@ public class BlackJack extends Game {
   public void init() {
     for (Player player : getPlayers()) {
       //pop two cards for each player
-      player.addCard(deck.popCard());
-      player.addCard(deck.popCard());
+      player.addCard(deck.dealCard());
+      player.addCard(deck.dealCard());
       log.info(player.getInfo());
     }
   }
@@ -35,7 +35,7 @@ public class BlackJack extends Game {
   public void executeTurn(Player player){
     log.info("**** Executing Turn ...");
     if (player.getStatus() == Move.HIT) {
-      player.addCard(deck.popCard());
+      player.addCard(deck.dealCard());
     }
     log.info(player.getInfo());
   }

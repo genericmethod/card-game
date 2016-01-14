@@ -1,6 +1,5 @@
 package codingtest.framework.domain.deck;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
@@ -20,11 +19,15 @@ public abstract class Deck implements Shuffable {
   }
 
   public abstract void shuffle();
-  public List<Card> getUnshuffledCards(){
+  public List<Card> getUnShuffledCards(){
     return unShuffledCards;
   }
 
-  public Card popCard() {
+  /**
+   * Pops a card from the top af the stack.
+   * @return {@link Card} that has been taken from the top of the deck
+   */
+  public Card dealCard() {
     return shuffledCards.pop();
   }
 }
