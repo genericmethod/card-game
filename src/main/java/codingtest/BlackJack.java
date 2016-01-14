@@ -1,7 +1,5 @@
 package codingtest;
 
-
-
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -22,19 +20,6 @@ public class BlackJack extends Game {
 
   public BlackJack(Deck deck) {
     this.deck = deck;
-  }
-
-  public void play() {
-    log.info("*** Game Started");
-    dealHand();
-
-    log.info("*** First hand dealt");
-    while (isGameNotFinished()) {
-      for (Player player : getPlayers()) {
-        executeTurn(player);
-      }
-    }
-    log.info("*** Game Finished");
   }
 
   public void dealHand() {
@@ -95,10 +80,6 @@ public class BlackJack extends Game {
             checkOnePlayerLeft(getPlayers()) ||
             checkAllStick(getPlayers()) ||
             checkAllBust(getPlayers());
-  }
-
-  private boolean isGameNotFinished(){
-    return !isGameFinished();
   }
 
   private boolean checkAllStick(List<Player> players){
