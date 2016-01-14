@@ -19,7 +19,7 @@ public class Poker extends Game {
 
   @Override
   protected boolean isGameFinished() {
-    return false;
+    return true;
   }
 
   @Override

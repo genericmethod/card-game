@@ -1,8 +1,6 @@
 package codingtest.framework.domain.player;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import codingtest.framework.domain.card.Card;
@@ -17,7 +15,8 @@ public class Player {
   private Set<Card> cards =  new HashSet<Card>();
   private String playerName;
 
-  public Player() {}
+  public Player() {
+  }
 
   public Player(String playerName) {
     this.playerName = playerName;

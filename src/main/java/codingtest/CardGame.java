@@ -28,7 +28,48 @@ public class CardGame {
   public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in);
-    System.out.print("Enter Number of Players: ");
+
+    displayChooseCardDeckMenu();
+
+    Integer deckSelection  = scanner.nextInt();
+
+    Deck deck;
+    switch (deckSelection) {
+      case 1:
+        deck = DeckFactory.buildDeck(ShuffleStrategy.NO_SHUFFLE);
+        break;
+      case 2:
+        deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
+        break;
+      case 3:
+        System.out.println("Goodbye!");
+        return;
+      default:
+        System.out.println("Invalid selection");
+        return;
+    }
+
+    selectCardGameMenu();
+
+    Integer gameSelection  = scanner.nextInt();
+
+    Game game;
+    switch (gameSelection) {
+      case 1:
+        game = GameFactory.buildGame(GameType.BLACKJACK, deck);
+        break;
+      case 2:
+        game = GameFactory.buildGame(GameType.POKER, deck);
+        break;
+      case 3:
+        System.out.println("Goodbye!");
+        return;
+      default:
+        System.out.println("Invalid selection");
+        return;
+    }
+
+    System.out.println("Enter Number of Players: ");
 
     Integer numberOfPlayers = Integer.valueOf(scanner.next());
 
@@ -37,17 +78,36 @@ public class CardGame {
       return;
     }
 
-    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
-    Game blackJack = GameFactory.buildGame(GameType.BLACKJACK, deck);
-
     for (int i = 0; i < numberOfPlayers; i++) {
-      blackJack.addPlayer(new Player("Player " + (i + 1)));
+      game.addPlayer(new Player("Player " + (i + 1)));
     }
 
-    blackJack.play();
+    game.play();
 
-    log.info("Winner - " + (blackJack.getWinner() == null ?
+    log.info("Winner - " + (game.getWinner() == null ?
             "No Winner! " :
-            blackJack.getWinner().getPlayerName()));
+            game.getWinner().getPlayerName()));
+  }
+
+  public static void selectCardGameMenu() {
+    System.out.println("============================");
+    System.out.println("|   Select A Card Game     |");
+    System.out.println("============================");
+    System.out.println("| Options:                 |");
+    System.out.println("|        1. Blackjack      |");
+    System.out.println("|        2. Poker          |");
+    System.out.println("|        3. Exit           |");
+    System.out.println("============================");
+  }
+
+  public static void displayChooseCardDeckMenu() {
+    System.out.println("============================");
+    System.out.println("|   Choose a Card Deck     |");
+    System.out.println("============================");
+    System.out.println("| Options:                 |");
+    System.out.println("|   1. UnShuffled Deck     |");
+    System.out.println("|   2. Basic Shuffle       |");
+    System.out.println("|   3. Exit                |");
+    System.out.println("============================");
   }
 }
