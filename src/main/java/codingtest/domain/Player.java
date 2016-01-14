@@ -8,13 +8,10 @@ public class Player {
   List<Card> cards =  new ArrayList<Card>();
   String playerName;
 
-  public Player() {
-
-  }
+  public Player() {}
 
   public Player(String playerName) {
     this.playerName = playerName;
-
   }
 
   public void addCard(Card card){

@@ -12,14 +12,6 @@ public abstract class Game {
 
   private List<Player> players = new ArrayList<Player>();
 
-  void addPlayer(Player player){
-    players.add(player);
-  };
-
-  public List<Player> getPlayers() {
-    return players;
-  }
-
   public void play() {
     log.info("*** Game Started");
     dealHand();
@@ -34,14 +26,18 @@ public abstract class Game {
   }
 
   protected abstract void executeTurn(Player player);
-
-
   protected abstract void dealHand();
-
   protected abstract boolean isGameFinished();
-
   private boolean isGameNotFinished(){
     return !isGameFinished();
+  }
+
+  void addPlayer(Player player){
+    players.add(player);
+  };
+
+  public List<Player> getPlayers() {
+    return players;
   }
 
 
