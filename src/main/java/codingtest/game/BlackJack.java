@@ -49,6 +49,7 @@ public class BlackJack extends Game {
     log.info(player.getInfo());
   }
 
+
   public Player getWinner() {
 
     List<Player> stickPlayers = getPlayersWithStickStatus(getPlayers());

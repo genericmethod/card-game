@@ -21,7 +21,6 @@ public class BlackJackTest {
   @Test
   public void testDealHand() throws Exception {
 
-    List<Card> newPackOfCards = Card.getNewPackOfCards();
     Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     BlackJack blackJack = new BlackJack(deck);
     blackJack.addPlayer(new Player());
@@ -42,7 +41,6 @@ public class BlackJackTest {
     Player playerOne = new Player();
     Player playerTwo = new Player();
 
-    List<Card> newPackOfCards = Card.getNewPackOfCards();
     Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -66,7 +64,6 @@ public class BlackJackTest {
     Player playerTwo = new Player();
     Player playerThree = new Player();
 
-    List<Card> newPackOfCards = Card.getNewPackOfCards();
     Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -246,6 +243,7 @@ public class BlackJackTest {
 
     Player playerOne = new Player();
     Player playerTwo = new Player();
+    Player playerThree = new Player();
 
     Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     BlackJack blackJack = new BlackJack(deck);
@@ -256,8 +254,13 @@ public class BlackJackTest {
     playerTwo.addCard(new Card(Rank.ACE, Suit.CLUBS));
     playerTwo.addCard(new Card(Rank.EIGHT, Suit.DIAMONDS));
 
+    playerThree.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerThree.addCard(new Card(Rank.KING, Suit.DIAMONDS));
+    playerThree.addCard(new Card(Rank.KING, Suit.DIAMONDS));
+
     blackJack.addPlayer(playerOne);
     blackJack.addPlayer(playerTwo);
+    blackJack.addPlayer(playerThree);
 
     assertEquals(null, blackJack.getWinner());
 

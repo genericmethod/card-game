@@ -1,7 +1,9 @@
 package codingtest.framework.domain.player;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import codingtest.framework.domain.card.Card;
 import codingtest.framework.domain.enums.Move;
@@ -12,7 +14,7 @@ import codingtest.framework.domain.enums.Move;
  */
 public class Player {
 
-  private List<Card> cards =  new ArrayList<Card>();
+  private Set<Card> cards =  new HashSet<Card>();
   private String playerName;
 
   public Player() {}
@@ -55,7 +57,7 @@ public class Player {
     return null;
   }
 
-  public List<Card> getCards() {
+  public Set<Card> getCards() {
     return cards;
   }
 
