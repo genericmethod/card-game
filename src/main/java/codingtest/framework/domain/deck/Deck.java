@@ -16,6 +16,7 @@ public abstract class Deck implements Shuffable {
 
   public Deck (List<Card> unShuffledCards){
     this.unShuffledCards = unShuffledCards;
+    shuffle();
   }
 
   public abstract void shuffle();
