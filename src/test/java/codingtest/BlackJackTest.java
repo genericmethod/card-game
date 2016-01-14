@@ -61,6 +61,35 @@ public class BlackJackTest {
   }
 
   @Test
+  public void testIsGameFinishedAllPlayerStickButOnePlayerIsBust(){
+
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
+    Player playerThree = new Player();
+
+    List<Card> newPackOfCards = Card.getNewPackOfCards();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
+    deck.shuffle(newPackOfCards);
+    BlackJack blackJack = new BlackJack(deck);
+
+    blackJack.addPlayer(playerOne);
+    blackJack.addPlayer(playerTwo);
+    blackJack.addPlayer(playerThree);
+
+    playerOne.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerOne.addCard(new Card(Rank.EIGHT, Suit.DIAMONDS));
+
+    playerTwo.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerTwo.addCard(new Card(Rank.NINE, Suit.DIAMONDS));
+
+    playerThree.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerThree.addCard(new Card(Rank.KING, Suit.DIAMONDS));
+
+    assertTrue("All players stick, game should be finished", blackJack.isGameFinished());
+
+  }
+
+  @Test
   public void testIsGameFinishedAllPlayersBust(){
 
     Player playerOne = new Player();

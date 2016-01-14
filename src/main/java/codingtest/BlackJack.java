@@ -81,12 +81,14 @@ public class BlackJack extends Game {
   }
 
   private boolean checkAllStick(List<Player> players){
+
     for (Player player : players) {
-      if (!player.getStatus().equals(Move.STICK)){
+      if (player.getStatus().equals(Move.HIT)){
         return false;
       }
     }
     return true;
+
   }
 
   private boolean checkAllBust(List<Player> players){

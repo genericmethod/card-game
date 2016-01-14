@@ -3,6 +3,7 @@ package codingtest;
 import org.apache.log4j.Logger;
 
 import java.util.List;
+import java.util.Scanner;
 
 import codingtest.domain.Card;
 import codingtest.domain.Player;
@@ -23,13 +24,22 @@ public class CardGame  {
      * @param args the arguments to the game
      */
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Number of Players: ");
+        Integer numberOfPlayers = Integer.valueOf(scanner.next());
+
         List<Card> newPackOfCards = Card.getNewPackOfCards();
         Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
         deck.shuffle(newPackOfCards);
         BlackJack blackJack = new BlackJack(deck);
-        blackJack.addPlayer(new Player("Player 1"));
-        blackJack.addPlayer(new Player("Player 2"));
+
+        for (int i = 0; i < numberOfPlayers ; i++) {
+            blackJack.addPlayer(new Player("Player " + (i + 1)));
+        }
+
         blackJack.play();
+
         log.info("Winner - " + (blackJack.getWinner() == null ? "No Winner! " : blackJack.getWinner().getPlayerName()));
 
 
