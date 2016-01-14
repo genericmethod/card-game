@@ -1,9 +1,10 @@
-package codingtest.framework;
+package codingtest.game;
 
+import codingtest.framework.Game;
 import codingtest.framework.domain.player.Player;
 import codingtest.framework.domain.deck.Deck;
 
-public class Poker extends Game{
+public class Poker extends Game {
 
   public Poker(Deck deck) {
     super(deck);
@@ -22,7 +23,7 @@ public class Poker extends Game{
   }
 
   @Override
-  protected Player getWinner() {
+  public Player getWinner() {
     return null;
   }
 }

@@ -1,9 +1,12 @@
-package codingtest.framework;
+package codingtest;
 
 import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
+import codingtest.framework.DeckFactory;
+import codingtest.framework.Game;
+import codingtest.framework.GameFactory;
 import codingtest.framework.domain.deck.Deck;
 import codingtest.framework.domain.enums.GameType;
 import codingtest.framework.domain.enums.ShuffleStrategy;

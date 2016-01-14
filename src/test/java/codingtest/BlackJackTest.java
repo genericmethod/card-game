@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import codingtest.framework.BlackJack;
+import codingtest.game.BlackJack;
 import codingtest.framework.domain.card.Card;
 import codingtest.framework.domain.player.Player;
 import codingtest.framework.DeckFactory;

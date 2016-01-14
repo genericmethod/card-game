@@ -8,6 +8,7 @@ import codingtest.framework.domain.enums.Suit;
 
 /**
  * This is the domain class that represents a card in a card game.
+ * A card is made up of a {@link Rank} and a {@link Suit}
  */
 public class Card {
 

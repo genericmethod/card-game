@@ -12,7 +12,7 @@ import codingtest.framework.domain.deck.Deck;
  * The abstract game class can be extended to play different types of card games
  * that involve a deck of cards and a set of players.
  */
-public abstract class Game {
+public abstract class Game implements Playable{
 
   private static final Logger log = Logger.getLogger(Game.class);
 
@@ -24,18 +24,15 @@ public abstract class Game {
   }
 
   /**
-   * Every card game follows a standard seqeuence of event
+   * Every card game follows a standard seqeuence of events
    * 1. Deal first hand
    * 2. Start a round
    * 3. Each player executes turn
    * 4. Stop playing if game has finished
    */
   public void play() {
-    log.info("*** Game Started");
 
     init();
-
-    log.info("*** First hand dealt");
     while (isGameNotFinished()) {
       for (Player player : getPlayers()) {
         executeTurn(player);
@@ -56,7 +53,7 @@ public abstract class Game {
    */
   protected abstract void executeTurn(Player player);
   protected abstract boolean isGameFinished();
-  protected abstract Player getWinner();
+  public abstract Player getWinner();
   private boolean isGameNotFinished() {
     return !isGameFinished();
   }

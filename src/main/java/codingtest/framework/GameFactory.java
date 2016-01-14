@@ -1,8 +1,9 @@
 package codingtest.framework;
 
-import codingtest.framework.domain.deck.BasicShuffledDeck;
 import codingtest.framework.domain.deck.Deck;
 import codingtest.framework.domain.enums.GameType;
+import codingtest.game.BlackJack;
+import codingtest.game.Poker;
 
 
 /**

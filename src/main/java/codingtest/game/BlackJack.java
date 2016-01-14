@@ -1,4 +1,4 @@
-package codingtest.framework;
+package codingtest.game;
 
 import org.apache.log4j.Logger;
 
@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
+import codingtest.framework.Game;
 import codingtest.framework.domain.enums.Move;
 import codingtest.framework.domain.player.Player;
 import codingtest.framework.domain.deck.Deck;
