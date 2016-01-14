@@ -1,4 +1,4 @@
-package codingtest;
+package codingtest.framework;
 
 import org.apache.log4j.Logger;
 
@@ -8,10 +8,13 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
-import codingtest.domain.enums.Move;
-import codingtest.domain.Player;
-import codingtest.domain.deck.Deck;
+import codingtest.framework.domain.enums.Move;
+import codingtest.framework.domain.Player;
+import codingtest.framework.domain.deck.Deck;
 
+/**
+ * Blackjack implementation of the game.
+ */
 public class BlackJack extends Game {
 
   private static final Logger log = Logger.getLogger(BlackJack.class);
@@ -20,7 +23,7 @@ public class BlackJack extends Game {
     super(deck);
   }
 
-  public void dealHand() {
+  public void init() {
     for (Player player : getPlayers()) {
       //pop two cards for each player
       player.addCard(deck.popCard());
