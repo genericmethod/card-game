@@ -7,6 +7,7 @@ import codingtest.framework.domain.card.Card;
 
 /**
  * This is the class that represents a deck of cards in a card game.
+ * Create your own type of shuffled {@link Deck} by implementing this abstract class.
  */
 public abstract class Deck implements Shuffable {
 
@@ -18,7 +19,11 @@ public abstract class Deck implements Shuffable {
     shuffle();
   }
 
+  /**
+   * Implement the shuffle method to implement your custom shuffle strategy.
+   */
   public abstract void shuffle();
+
   public List<Card> getUnShuffledCards(){
     return unShuffledCards;
   }

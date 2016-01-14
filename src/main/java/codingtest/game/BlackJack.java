@@ -24,6 +24,10 @@ public class BlackJack extends Game {
     super(deck);
   }
 
+  /**
+   * In Blackjack, the game is initialised by giving players
+   * two cards from the deck.
+   */
   public void init() {
     for (Player player : getPlayers()) {
       //pop two cards for each player
@@ -33,6 +37,10 @@ public class BlackJack extends Game {
     }
   }
 
+  /**
+   * If the players turn is a HIT, give the player another card.
+   * @param player {@link Player} that is currently playing.
+   */
   public void executeTurn(Player player){
     log.info("**** Executing Turn ...");
     if (player.getStatus() == Move.HIT) {

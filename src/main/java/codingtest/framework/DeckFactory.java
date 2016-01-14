@@ -12,6 +12,11 @@ import codingtest.framework.domain.enums.ShuffleStrategy;
  */
 public class DeckFactory {
 
+  /**
+   * Returns a deck of shuffled cards;
+   * @param shuffleStrategy The shuffle strategy to use.
+   * @return A shuffled deck of cards
+   */
   public static Deck buildDeck(ShuffleStrategy shuffleStrategy){
 
     Deck deck = null;
