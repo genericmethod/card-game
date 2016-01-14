@@ -8,14 +8,18 @@ import codingtest.framework.domain.card.Card;
 /**
  * This is the class that represents a deck of cards in a card game.
  * Create your own type of shuffled {@link Deck} by implementing this abstract class.
+ * Shuffled cards are kept in a {@link Stack}.
+ * Cards can be dealt using the {@link Deck#dealCard dealCard} method.
+ * The deck is shuffled when the constructor method is executed.
  */
 public abstract class Deck implements Shuffable {
 
-  Stack<Card> shuffledCards = new Stack<Card>();
-  List<Card> unShuffledCards;
+  private Stack<Card> shuffledCards;
+  private List<Card> unShuffledCards;
 
   public Deck (List<Card> unShuffledCards){
     this.unShuffledCards = unShuffledCards;
+    shuffledCards = new Stack<Card>();
     shuffle();
   }
 
@@ -26,6 +30,10 @@ public abstract class Deck implements Shuffable {
 
   public List<Card> getUnShuffledCards(){
     return unShuffledCards;
+  }
+
+  public Stack<Card> getShuffledCards() {
+    return shuffledCards;
   }
 
   /**

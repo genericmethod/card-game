@@ -31,7 +31,5 @@ public class PlayerTest {
     player.addCard(new Card(Rank.THREE, Suit.CLUBS));
     assertEquals(22, player.getCardTotal());
     assertEquals(Move.BUST, player.getStatus());
-
-
   }
 }
