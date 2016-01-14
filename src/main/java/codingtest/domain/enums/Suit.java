@@ -1,4 +1,4 @@
-package codingtest.domain;
+package codingtest.domain.enums;
 
 
 public enum Suit{

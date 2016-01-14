@@ -6,8 +6,10 @@ import java.util.List;
 
 import codingtest.domain.Card;
 import codingtest.domain.Player;
-import codingtest.domain.Rank;
-import codingtest.domain.Suit;
+import codingtest.domain.deck.DeckFactory;
+import codingtest.domain.enums.Rank;
+import codingtest.domain.enums.ShuffleStrategy;
+import codingtest.domain.enums.Suit;
 import codingtest.domain.deck.Deck;
 
 import static org.junit.Assert.assertEquals;
@@ -19,7 +21,7 @@ public class BlackJackTest {
   public void testDealHand() throws Exception {
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
     blackJack.addPlayer(new Player());
@@ -41,7 +43,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -65,7 +67,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -89,7 +91,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -113,7 +115,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -138,7 +140,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -161,7 +163,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -184,7 +186,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -208,7 +210,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -233,7 +235,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -257,7 +259,7 @@ public class BlackJackTest {
     Player playerTwo = new Player();
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
 
@@ -278,7 +280,7 @@ public class BlackJackTest {
   public void testPlay(){
 
     List<Card> newPackOfCards = Card.getNewPackOfCards();
-    Deck deck = new Deck();
+    Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
     deck.shuffle(newPackOfCards);
     BlackJack blackJack = new BlackJack(deck);
     blackJack.addPlayer(new Player("Player 1"));

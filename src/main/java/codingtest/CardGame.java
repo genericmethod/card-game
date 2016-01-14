@@ -7,6 +7,8 @@ import java.util.List;
 import codingtest.domain.Card;
 import codingtest.domain.Player;
 import codingtest.domain.deck.Deck;
+import codingtest.domain.deck.DeckFactory;
+import codingtest.domain.enums.ShuffleStrategy;
 
 /**
  * Class that handles the playing of a card game from a simple command line interface,
@@ -22,7 +24,7 @@ public class CardGame  {
      */
     public static void main(String[] args) {
         List<Card> newPackOfCards = Card.getNewPackOfCards();
-        Deck deck = new Deck();
+        Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
         deck.shuffle(newPackOfCards);
         BlackJack blackJack = new BlackJack(deck);
         blackJack.addPlayer(new Player("Player 1"));

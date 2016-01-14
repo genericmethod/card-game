@@ -3,6 +3,8 @@ package codingtest.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import codingtest.domain.enums.Move;
+
 public class Player {
 
   List<Card> cards =  new ArrayList<Card>();
@@ -21,11 +23,12 @@ public class Player {
   public int getCardTotal(){
     int total = 0;
     for (Card card : cards) {
-      total = total + card.getRank().value;
+      total = total + card.getRank().getValue();
     }
     return total;
   }
 
+  //TODO - Move this out - players should have different Player strategies.
   public Move getStatus() {
     int total = getCardTotal();
     if (total < 17) return Move.HIT;

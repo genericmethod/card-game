@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
-import codingtest.domain.Move;
+import codingtest.domain.enums.Move;
 import codingtest.domain.Player;
 import codingtest.domain.deck.Deck;
 

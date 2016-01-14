@@ -1,4 +1,4 @@
-package codingtest.domain;
+package codingtest.domain.enums;
 
 
 public enum Rank {
@@ -20,5 +20,10 @@ public enum Rank {
 
   Rank(int value) {
     this.value = value;
+  }
+
+
+  public int getValue() {
+    return value;
   }
 }

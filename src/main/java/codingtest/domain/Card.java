@@ -3,6 +3,9 @@ package codingtest.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import codingtest.domain.enums.Rank;
+import codingtest.domain.enums.Suit;
+
 /**
  * This is the domain class that represents a card in a card game.
  */

@@ -2,6 +2,10 @@ package codingtest.domain;
 
 import org.junit.Test;
 
+import codingtest.domain.enums.Move;
+import codingtest.domain.enums.Rank;
+import codingtest.domain.enums.Suit;
+
 import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
