@@ -9,13 +9,7 @@ import codingtest.domain.Card;
 /**
  * @author cfarrugia
  */
-public class BasicShuffledDeck implements Deck {
-
-  Stack<Card> shuffledCards = new Stack<Card>();
-
-  public Card popCard() {
-    return shuffledCards.pop();
-  }
+public class BasicShuffledDeck extends Deck {
 
   public Stack<Card> shuffle(List<Card> unShuffledCards) {
 

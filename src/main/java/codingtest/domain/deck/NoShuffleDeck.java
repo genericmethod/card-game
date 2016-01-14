@@ -6,9 +6,7 @@ import java.util.Stack;
 import codingtest.domain.Card;
 
 
-public class NoShuffleDeck implements Deck {
-
-  Stack<Card> shuffledCards = new Stack<Card>();
+public class NoShuffleDeck extends Deck {
 
   public Stack<Card> shuffle(List<Card> unshuffledCards) {
     for (Card unshuffledCard : unshuffledCards) {
@@ -16,9 +14,4 @@ public class NoShuffleDeck implements Deck {
     }
     return shuffledCards;
   }
-
-  public Card popCard() {
-    return shuffledCards.pop();
-  }
-
 }
