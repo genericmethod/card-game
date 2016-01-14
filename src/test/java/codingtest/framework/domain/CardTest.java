@@ -1,6 +1,8 @@
-package codingtest.domain;
+package codingtest.framework.domain;
 import org.junit.Test;
 import java.util.List;
+
+import codingtest.framework.domain.card.Card;
 
 import static org.junit.Assert.assertEquals;
 

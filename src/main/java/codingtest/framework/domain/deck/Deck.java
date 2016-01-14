@@ -1,8 +1,8 @@
-package codingtest.domain.deck;
+package codingtest.framework.domain.deck;
 
 import java.util.Stack;
 
-import codingtest.domain.Card;
+import codingtest.framework.domain.card.Card;
 
 /**
  * This is the class that represents a deck of cards in a card game.

@@ -1,7 +1,14 @@
-package codingtest.domain.deck;
+package codingtest.framework;
 
-import codingtest.domain.enums.ShuffleStrategy;
+import codingtest.framework.domain.deck.BasicShuffledDeck;
+import codingtest.framework.domain.deck.Deck;
+import codingtest.framework.domain.deck.NoShuffleDeck;
+import codingtest.framework.domain.enums.ShuffleStrategy;
 
+
+/**
+ * The {@link DeckFactory} builds a Deck of cards depending on the specified {@link ShuffleStrategy}
+ */
 public class DeckFactory {
 
   public static Deck buildDeck(ShuffleStrategy shuffleStrategy){

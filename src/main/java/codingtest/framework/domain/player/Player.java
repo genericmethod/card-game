@@ -1,9 +1,10 @@
-package codingtest.domain;
+package codingtest.framework.domain.player;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import codingtest.domain.enums.Move;
+import codingtest.framework.domain.card.Card;
+import codingtest.framework.domain.enums.Move;
 
 public class Player {
 

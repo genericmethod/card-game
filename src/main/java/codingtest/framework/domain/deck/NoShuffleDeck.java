@@ -1,9 +1,9 @@
-package codingtest.domain.deck;
+package codingtest.framework.domain.deck;
 
 import java.util.List;
 import java.util.Stack;
 
-import codingtest.domain.Card;
+import codingtest.framework.domain.card.Card;
 
 
 public class NoShuffleDeck extends Deck {

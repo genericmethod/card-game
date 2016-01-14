@@ -1,10 +1,12 @@
-package codingtest.domain;
+package codingtest.framework.domain;
 
 import org.junit.Test;
 
-import codingtest.domain.enums.Move;
-import codingtest.domain.enums.Rank;
-import codingtest.domain.enums.Suit;
+import codingtest.framework.domain.card.Card;
+import codingtest.framework.domain.enums.Move;
+import codingtest.framework.domain.enums.Rank;
+import codingtest.framework.domain.enums.Suit;
+import codingtest.framework.domain.player.Player;
 
 import static org.junit.Assert.assertEquals;
 

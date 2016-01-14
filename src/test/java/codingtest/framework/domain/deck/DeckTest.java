@@ -1,10 +1,11 @@
-package codingtest.domain.deck;
+package codingtest.framework.domain.deck;
 
 import org.junit.Test;
 import java.util.List;
 
-import codingtest.domain.Card;
-import codingtest.domain.enums.ShuffleStrategy;
+import codingtest.framework.DeckFactory;
+import codingtest.framework.domain.card.Card;
+import codingtest.framework.domain.enums.ShuffleStrategy;
 
 import static org.junit.Assert.assertEquals;
 

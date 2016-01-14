@@ -4,13 +4,14 @@ import org.junit.Test;
 
 import java.util.List;
 
-import codingtest.domain.Card;
-import codingtest.domain.Player;
-import codingtest.domain.deck.DeckFactory;
-import codingtest.domain.enums.Rank;
-import codingtest.domain.enums.ShuffleStrategy;
-import codingtest.domain.enums.Suit;
-import codingtest.domain.deck.Deck;
+import codingtest.framework.BlackJack;
+import codingtest.framework.domain.card.Card;
+import codingtest.framework.domain.player.Player;
+import codingtest.framework.DeckFactory;
+import codingtest.framework.domain.enums.Rank;
+import codingtest.framework.domain.enums.ShuffleStrategy;
+import codingtest.framework.domain.enums.Suit;
+import codingtest.framework.domain.deck.Deck;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -27,7 +28,7 @@ public class BlackJackTest {
     blackJack.addPlayer(new Player());
     blackJack.addPlayer(new Player());
 
-    blackJack.dealHand();
+    blackJack.init();
 
     final List<Player> players = blackJack.getPlayers();
     for (Player player : players) {

@@ -9,11 +9,11 @@ import java.util.HashSet;
 import java.util.List;
 
 import codingtest.framework.domain.enums.Move;
-import codingtest.framework.domain.Player;
+import codingtest.framework.domain.player.Player;
 import codingtest.framework.domain.deck.Deck;
 
 /**
- * Blackjack implementation of the game.
+ * Blackjack implementation of a {@link Game}
  */
 public class BlackJack extends Game {
 
@@ -91,7 +91,6 @@ public class BlackJack extends Game {
       }
     }
     return true;
-
   }
 
   private boolean checkAllBust(List<Player> players){

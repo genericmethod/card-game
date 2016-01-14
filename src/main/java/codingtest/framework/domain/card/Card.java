@@ -1,10 +1,10 @@
-package codingtest.domain;
+package codingtest.framework.domain.card;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import codingtest.domain.enums.Rank;
-import codingtest.domain.enums.Suit;
+import codingtest.framework.domain.enums.Rank;
+import codingtest.framework.domain.enums.Suit;
 
 /**
  * This is the domain class that represents a card in a card game.
@@ -27,6 +27,10 @@ public class Card {
     return suit;
   }
 
+  /**
+   * Returns a new pack of cards orderes by Suit and Rank.
+   * @return List of {@link Card}
+   */
   public static List<Card> getNewPackOfCards() {
     ArrayList<Card> newPackOfCards = new ArrayList<Card>();
     for (Suit suit : Suit.values()) {
