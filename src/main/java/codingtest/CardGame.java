@@ -27,7 +27,13 @@ public class CardGame  {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Number of Players: ");
+
         Integer numberOfPlayers = Integer.valueOf(scanner.next());
+
+        if (numberOfPlayers < 1 || numberOfPlayers > 6){
+            System.out.print("Number of players must be between 1 & 6");
+            return;
+        }
 
         List<Card> newPackOfCards = Card.getNewPackOfCards();
         Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
