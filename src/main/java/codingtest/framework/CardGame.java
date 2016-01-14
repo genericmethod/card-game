@@ -2,10 +2,8 @@ package codingtest.framework;
 
 import org.apache.log4j.Logger;
 
-import java.util.List;
 import java.util.Scanner;
 
-import codingtest.framework.domain.card.Card;
 import codingtest.framework.domain.deck.Deck;
 import codingtest.framework.domain.enums.GameType;
 import codingtest.framework.domain.enums.ShuffleStrategy;
@@ -36,11 +34,7 @@ public class CardGame {
       return;
     }
 
-    List<Card> newPackOfCards = Card.getNewPackOfCards();
-
     Deck deck = DeckFactory.buildDeck(ShuffleStrategy.BASIC_SHUFFLE);
-    deck.shuffle(newPackOfCards);
-
     Game blackJack = GameFactory.buildGame(GameType.BLACKJACK, deck);
 
     for (int i = 0; i < numberOfPlayers; i++) {

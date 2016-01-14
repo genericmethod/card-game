@@ -1,5 +1,7 @@
 package codingtest.framework.domain.deck;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import codingtest.framework.domain.card.Card;
@@ -10,6 +12,16 @@ import codingtest.framework.domain.card.Card;
 public abstract class Deck implements Shuffable {
 
   Stack<Card> shuffledCards = new Stack<Card>();
+  List<Card> unShuffledCards;
+
+  public Deck (List<Card> unShuffledCards){
+    this.unShuffledCards = unShuffledCards;
+  }
+
+  public abstract void shuffle();
+  public List<Card> getUnshuffledCards(){
+    return unShuffledCards;
+  }
 
   public Card popCard() {
     return shuffledCards.pop();

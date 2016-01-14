@@ -1,5 +1,6 @@
 package codingtest.framework;
 
+import codingtest.framework.domain.card.Card;
 import codingtest.framework.domain.deck.BasicShuffledDeck;
 import codingtest.framework.domain.deck.Deck;
 import codingtest.framework.domain.deck.NoShuffleDeck;
@@ -17,14 +18,14 @@ public class DeckFactory {
     switch (shuffleStrategy) {
 
       case BASIC_SHUFFLE:
-        deck = new BasicShuffledDeck();
+        deck = new BasicShuffledDeck(Card.getNewPackOfCards());
         break;
 
       case NO_SHUFFLE:
-        deck = new NoShuffleDeck();
+        deck = new NoShuffleDeck(Card.getNewPackOfCards());
         break;
 
-      default: new BasicShuffledDeck();
+      default: new BasicShuffledDeck(Card.getNewPackOfCards());
     }
 
     return deck;

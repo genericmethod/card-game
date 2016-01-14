@@ -8,13 +8,15 @@ import codingtest.framework.domain.card.Card;
 
 public class BasicShuffledDeck extends Deck {
 
-  public Stack<Card> shuffle(List<Card> unShuffledCards) {
+  public BasicShuffledDeck(List<Card> unShuffledCards) {
+    super(unShuffledCards);
+    shuffle();
+  }
 
+  public void shuffle() {
     Collections.shuffle(unShuffledCards);
     for (Card unShuffledCard : unShuffledCards) {
       shuffledCards.push(unShuffledCard);
     }
-
-    return shuffledCards;
   }
 }

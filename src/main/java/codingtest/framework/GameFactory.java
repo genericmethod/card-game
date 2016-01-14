@@ -23,7 +23,7 @@ public class GameFactory {
         game = new Poker(deck);
         break;
 
-      default: new BasicShuffledDeck();
+      default: new BlackJack(deck);
     }
     return game;
   }
