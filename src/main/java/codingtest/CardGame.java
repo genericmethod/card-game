@@ -1,5 +1,7 @@
 package codingtest;
 
+import org.apache.log4j.Logger;
+
 import java.util.List;
 
 import codingtest.domain.Card;
@@ -11,6 +13,8 @@ import codingtest.domain.deck.Deck;
  * and echoes back a step-by-step description of the game to the console.
  */
 public class CardGame  {
+
+    private static final Logger log = Logger.getLogger(CardGame.class);
 
     /**
      * Main. Plays a card game from a command line interface.
@@ -24,5 +28,6 @@ public class CardGame  {
         blackJack.addPlayer(new Player("Player 1"));
         blackJack.addPlayer(new Player("Player 2"));
         blackJack.play();
+        log.info("Winner - " + (blackJack.getWinner() == null ? "No Winner! " : blackJack.getWinner().getPlayerName()));
     }
 }

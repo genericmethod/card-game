@@ -42,6 +42,7 @@ public class BlackJack extends Game {
       //pop two cards for each player
       player.addCard(deck.popCard());
       player.addCard(deck.popCard());
+      log.info(player.getInfo());
     }
   }
 
@@ -53,13 +54,13 @@ public class BlackJack extends Game {
     log.info(player.getInfo());
   }
 
-  public Player getWinner(List<Player> players) {
+  public Player getWinner() {
 
-    List<Player> stickPlayers = getPlayersWithStickStatus(players);
-
+    List<Player> stickPlayers = getPlayersWithStickStatus(getPlayers());
+    if(stickPlayers.size() == 0) return null;
     final Player player = checkForBlackJack(stickPlayers);
-    if (player != null) return player;
-
+    if(player != null) return player;
+    if(stickPlayers.size() == 1) return stickPlayers.get(0);
     if(playersHaveSameTotals(stickPlayers)){
       return null;
     }
@@ -92,7 +93,8 @@ public class BlackJack extends Game {
   public boolean isGameFinished(){
     return checkForBlackJack(getPlayers()) != null ||
             checkOnePlayerLeft(getPlayers()) ||
-            checkAllStick(getPlayers());
+            checkAllStick(getPlayers()) ||
+            checkAllBust(getPlayers());
   }
 
   private boolean isGameNotFinished(){
@@ -100,9 +102,17 @@ public class BlackJack extends Game {
   }
 
   private boolean checkAllStick(List<Player> players){
-    boolean allStick = true;
     for (Player player : players) {
       if (!player.getStatus().equals(Move.STICK)){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean checkAllBust(List<Player> players){
+    for (Player player : players) {
+      if (!player.getStatus().equals(Move.BUST)){
         return false;
       }
     }
@@ -116,7 +126,6 @@ public class BlackJack extends Game {
     for (Player player : players) {
       if (player.getStatus().equals(Move.BUST)) bustPlayersCount++;
     }
-
     return ((numberOfPlayers - bustPlayersCount) == 1);
   }
 

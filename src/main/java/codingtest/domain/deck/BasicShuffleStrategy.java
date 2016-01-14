@@ -1,5 +1,6 @@
 package codingtest.domain.deck;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -11,9 +12,13 @@ public class BasicShuffleStrategy implements Shuffle {
   Stack<Card> shuffledCards = new Stack<Card>();
 
   public Stack<Card> shuffle(List<Card> unshuffledCards) {
+
+    Collections.shuffle(unshuffledCards);
+
     for (Card unshuffledCard : unshuffledCards) {
       shuffledCards.push(unshuffledCard);
     }
+
     return shuffledCards;
   }
 }

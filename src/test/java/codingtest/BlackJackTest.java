@@ -59,6 +59,30 @@ public class BlackJackTest {
   }
 
   @Test
+  public void testIsGameFinishedAllPlayersBust(){
+
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
+
+    List<Card> newPackOfCards = Card.getNewPackOfCards();
+    Deck deck = new Deck();
+    deck.shuffle(newPackOfCards);
+    BlackJack blackJack = new BlackJack(deck);
+
+    blackJack.addPlayer(playerOne);
+    blackJack.addPlayer(playerTwo);
+
+    playerOne.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerOne.addCard(new Card(Rank.KING, Suit.DIAMONDS));
+
+    playerTwo.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerTwo.addCard(new Card(Rank.KING, Suit.DIAMONDS));
+
+    assertTrue("All players bust, game should be finished", blackJack.isGameFinished());
+
+  }
+
+  @Test
    public void testIsGameFinishedPlayerHasBlackJackCombination(){
 
     Player playerOne = new Player();
@@ -127,7 +151,7 @@ public class BlackJackTest {
     blackJack.addPlayer(playerOne);
     blackJack.addPlayer(playerTwo);
 
-    assertEquals(playerOne, blackJack.getWinner(blackJack.getPlayers()));
+    assertEquals(playerOne, blackJack.getWinner());
   }
 
   @Test
@@ -150,7 +174,56 @@ public class BlackJackTest {
     blackJack.addPlayer(playerOne);
     blackJack.addPlayer(playerTwo);
 
-    assertEquals(playerTwo, blackJack.getWinner(blackJack.getPlayers()));
+    assertEquals(playerTwo, blackJack.getWinner());
+  }
+
+  @Test
+     public void testCheckWinnerOneBustOneStick() {
+
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
+
+    List<Card> newPackOfCards = Card.getNewPackOfCards();
+    Deck deck = new Deck();
+    deck.shuffle(newPackOfCards);
+    BlackJack blackJack = new BlackJack(deck);
+
+    playerOne.addCard(new Card(Rank.KING, Suit.CLUBS));
+    playerOne.addCard(new Card(Rank.SEVEN, Suit.DIAMONDS));
+
+    playerTwo.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerTwo.addCard(new Card(Rank.THREE, Suit.CLUBS));
+    playerTwo.addCard(new Card(Rank.NINE, Suit.DIAMONDS));
+
+    blackJack.addPlayer(playerOne);
+    blackJack.addPlayer(playerTwo);
+
+    assertEquals(playerOne, blackJack.getWinner());
+  }
+
+  @Test
+  public void testCheckWinnerTwoBust() {
+
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
+
+    List<Card> newPackOfCards = Card.getNewPackOfCards();
+    Deck deck = new Deck();
+    deck.shuffle(newPackOfCards);
+    BlackJack blackJack = new BlackJack(deck);
+
+    playerOne.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerOne.addCard(new Card(Rank.THREE, Suit.CLUBS));
+    playerOne.addCard(new Card(Rank.NINE, Suit.DIAMONDS));
+
+    playerTwo.addCard(new Card(Rank.ACE, Suit.CLUBS));
+    playerTwo.addCard(new Card(Rank.THREE, Suit.CLUBS));
+    playerTwo.addCard(new Card(Rank.NINE, Suit.DIAMONDS));
+
+    blackJack.addPlayer(playerOne);
+    blackJack.addPlayer(playerTwo);
+
+    assertEquals(null, blackJack.getWinner());
   }
 
   @Test
@@ -173,7 +246,8 @@ public class BlackJackTest {
     blackJack.addPlayer(playerOne);
     blackJack.addPlayer(playerTwo);
 
-    assertEquals(null, blackJack.getWinner(blackJack.getPlayers()));
+    assertEquals(null, blackJack.getWinner());
+
   }
 
   @Test
