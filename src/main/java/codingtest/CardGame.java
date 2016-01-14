@@ -31,5 +31,7 @@ public class CardGame  {
         blackJack.addPlayer(new Player("Player 2"));
         blackJack.play();
         log.info("Winner - " + (blackJack.getWinner() == null ? "No Winner! " : blackJack.getWinner().getPlayerName()));
+
+
     }
 }

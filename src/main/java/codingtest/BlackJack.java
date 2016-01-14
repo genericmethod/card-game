@@ -16,10 +16,8 @@ public class BlackJack extends Game {
 
   private static final Logger log = Logger.getLogger(BlackJack.class);
 
-  private Deck deck;
-
   public BlackJack(Deck deck) {
-    this.deck = deck;
+    super(deck);
   }
 
   public void dealHand() {

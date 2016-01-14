@@ -6,16 +6,13 @@ import java.util.Stack;
 
 import codingtest.domain.Card;
 
-/**
- * @author cfarrugia
- */
 public class BasicShuffledDeck extends Deck {
 
   public Stack<Card> shuffle(List<Card> unShuffledCards) {
 
     Collections.shuffle(unShuffledCards);
-    for (Card unshuffledCard : unShuffledCards) {
-      shuffledCards.push(unshuffledCard);
+    for (Card unShuffledCard : unShuffledCards) {
+      shuffledCards.push(unShuffledCard);
     }
 
     return shuffledCards;
