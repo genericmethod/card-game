@@ -65,3 +65,10 @@ Assume there are 3 players. The aim of the game is to collect cards so that the 
 1. mvn package
 1. cd target
 1. java -jar cardgame-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+# TODO #
+
+1. Increase coverage. 
+2. Refactor Player class.
+3. Create BlackJackUtil / GameUtil class with helper methods.
+4. Add jacoco / pmd / checkstyle plugins
