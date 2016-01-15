@@ -58,3 +58,10 @@ Assume there are 3 players. The aim of the game is to collect cards so that the 
 
 
 "Hello World!" - Chris Farrugia 2016
+
+
+# How to run: #
+
+1. mvn package
+1. cd target
+1. java -jar cardgame-0.0.1-SNAPSHOT-jar-with-dependencies.jar
