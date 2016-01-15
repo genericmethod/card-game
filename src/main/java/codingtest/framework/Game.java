@@ -51,13 +51,21 @@ public abstract class Game implements Playable {
    */
   protected abstract void executeTurn(Player player);
 
+  /**
+   * Implement the rules which determine when the game has finished.
+   * @return True if game finish rules have been satisfied. Otherwise false.
+   */
   protected abstract boolean isGameFinished();
-
-  public abstract Player getWinner();
 
   private boolean isGameNotFinished() {
     return !isGameFinished();
   }
+
+  /**
+   * Implement the rules which determine the winner of the game.
+   * @return Returns the winning player. Returns null if there is no winner.
+   */
+  public abstract Player getWinner();
 
   /**
    * Add a player to the game
